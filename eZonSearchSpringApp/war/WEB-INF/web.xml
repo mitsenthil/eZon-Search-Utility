@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<!-- <servlet> <servlet-name>EZonSearchSpringApp</servlet-name> <servlet-class>com.eZon.search.EZonSearchSpringAppServlet</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>EZonSearchSpringApp</servlet-name> 
+		<url-pattern>/ezonsearchspringapp</url-pattern> </servlet-mapping> -->
+
+
+	<servlet>
+		<servlet-name>eZonSearchApp</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	 <servlet-mapping>
+		<servlet-name>eZonSearchApp</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping> 
+	
+	<servlet-mapping>
+		<servlet-name>eZonSearchApp</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>getGoldRateServlet</servlet-name>
+		<servlet-class>com.eZon.goldrate.GoldRateServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	 <servlet-mapping>
+		<servlet-name>getGoldRateServlet</servlet-name>
+		<url-pattern>/getGoldRates</url-pattern>
+	</servlet-mapping> 
+	
+	<servlet>
+		<servlet-name>EBayDealsWidget</servlet-name>
+		<servlet-class>com.eZon.widget.EBayDealsWidgetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EBayDealsWidget</servlet-name>
+		<url-pattern>/ebayDealsWidget</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
